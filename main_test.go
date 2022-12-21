@@ -14,6 +14,7 @@ type AnswerFn func(string) (string, error)
 
 var days = [][2]AnswerFn{
 	{Day1Part1, Day1Part2},
+	{Day2Part1, Day2Part2},
 }
 
 func TestDays(t *testing.T) {
