@@ -29,6 +29,9 @@ func TestDays(t *testing.T) {
 				require.NoError(t, testFile.Load(file))
 				t.Run(testFile.Name, func(t *testing.T) {
 					for j, partFn := range parts[:] {
+						if partFn == nil {
+							continue
+						}
 						part := j + 1
 						answer, err := partFn(testFile.Input)
 						require.NoError(t, err)
